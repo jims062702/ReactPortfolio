@@ -58,7 +58,9 @@ export default function Work() {
 
           {/* Card 1 */}
           <div
-            ref={(el) => el && (cardRefs.current[0] = el)}
+            ref={(el) => {
+  if (el) cardRefs.current[0] = el
+}}
             className="w-1/2 pr-12"
           >
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8">
@@ -77,7 +79,9 @@ export default function Work() {
 
           {/* Card 2 */}
           <div
-            ref={(el) => el && (cardRefs.current[1] = el)}
+            ref={(el) => {
+  if (el) cardRefs.current[1] = el
+}}
             className="w-1/2 ml-auto pl-12"
           >
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8">

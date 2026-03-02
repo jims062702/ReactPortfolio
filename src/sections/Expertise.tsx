@@ -2,14 +2,20 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import CountUp from "react-countup"
 
-import { Code2, Server, Database, PenTool, Brush, AppWindow } from "lucide-react"
+import {
+  Code2,
+  Server,
+  Database,
+  PenTool,
+  Brush,
+  AppWindow,
+} from "lucide-react"
 
 import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
   FaFigma,
-  
 } from "react-icons/fa"
 
 import {
@@ -23,7 +29,6 @@ import {
   SiMongodb,
   SiFirebase,
   SiDocker,
-  
 } from "react-icons/si"
 
 export default function Expertise() {
@@ -58,20 +63,26 @@ export default function Expertise() {
   }
 
   return (
-    <section id="expertise" className="min-h-screen px-20 py-20 text-white">
+    <section
+      id="expertise"
+      className="min-h-screen px-6 md:px-12 lg:px-20 py-20 text-white"
+    >
 
-      {/* Code Style Heading */}
-      <p className="text-xl font-mono">
-  <span className="text-pink-400">&lt;</span>
-  <span className="text-purple-400">section</span>{" "}
-  <span className="text-green-400">id</span>
-  <span className="text-white">=</span>
-  <span className="text-yellow-300">"expertise"</span>
-  <span className="text-pink-400">&gt;</span>
-</p>
+      {/* Code Heading */}
+      <p className="text-base md:text-lg font-mono">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-purple-400">section</span>{" "}
+        <span className="text-green-400">id</span>
+        <span className="text-white">=</span>
+        <span className="text-yellow-300">"expertise"</span>
+        <span className="text-pink-400">&gt;</span>
+      </p>
 
-      <h2 className="text-7xl font-bold mt-4">Expertise</h2>
-      <p className="text-gray-400 font-mono mt-2">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-4">
+        Expertise
+      </h2>
+
+      <p className="text-gray-400 font-mono mt-2 text-sm md:text-base">
         // technologies & tools I work with
       </p>
 
@@ -79,7 +90,7 @@ export default function Expertise() {
       <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl mt-12">
 
         {/* Tabs */}
-        <div className="flex gap-10 px-8 py-6 border-b border-white/10 text-sm font-mono">
+        <div className="flex gap-6 md:gap-10 px-6 md:px-8 py-6 border-b border-white/10 text-xs md:text-sm font-mono overflow-x-auto scrollbar-hide">
 
           {[
             { key: "frontend", label: "Frontend", icon: Code2 },
@@ -95,7 +106,7 @@ export default function Expertise() {
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`relative flex items-center gap-2 transition ${
+                className={`relative flex items-center gap-2 whitespace-nowrap transition ${
                   isActive
                     ? "text-white"
                     : "text-gray-400 hover:text-white"
@@ -121,7 +132,7 @@ export default function Expertise() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
-          className="p-10 grid grid-cols-2 gap-8"
+          className="p-6 md:p-10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8"
         >
           {skills[activeTab as keyof typeof skills].map((skill, index) => {
             const Icon = skill.icon
@@ -130,27 +141,24 @@ export default function Expertise() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6"
+                className="bg-white/5 border border-white/10 rounded-2xl p-5 md:p-6"
               >
                 <div className="flex justify-between items-center mb-4">
 
-                  {/* Icon + Name */}
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 flex items-center justify-center bg-purple-500/20 rounded-lg">
-                      <Icon size={20} className={skill.color} />
+                    <div className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-purple-500/20 rounded-lg">
+                      <Icon size={18} className={skill.color} />
                     </div>
-                    <h3 className="text-gray-300 font-semibold">
+                    <h3 className="text-gray-300 font-semibold text-sm md:text-base">
                       {skill.name}
                     </h3>
                   </div>
 
-                  {/* Animated Counter */}
-                  <span className="text-gray-400 text-sm">
+                  <span className="text-gray-400 text-xs md:text-sm">
                     <CountUp end={skill.percent} duration={1.5} />%
                   </span>
                 </div>
 
-                {/* Progress Bar */}
                 <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
@@ -167,13 +175,13 @@ export default function Expertise() {
       </div>
 
       {/* Closing Tag */}
-      
-        <p className="text-xl font-mono mt-5">
-  <span className="text-pink-400">&lt;</span>
-  <span className="text-pink-400">/</span>
-  <span className="text-purple-400">section</span>
-  <span className="text-pink-400">&gt;</span>
-</p>
+      <p className="text-base md:text-lg font-mono mt-10">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-pink-400">/</span>
+        <span className="text-purple-400">section</span>
+        <span className="text-pink-400">&gt;</span>
+      </p>
+
     </section>
   )
 }

@@ -41,8 +41,10 @@ export default function Home() {
     return () => clearTimeout(timeout)
   }, [displayedText, isDeleting, textIndex])
 
-  // Floating Animation
+  // Floating Animation (Desktop Only)
   useEffect(() => {
+    if (window.innerWidth < 1024) return
+
     const card = cardRef.current
     if (!card) return
 
@@ -54,25 +56,13 @@ export default function Home() {
       card.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`
     }
 
-    const handleDeviceOrientation = (event: DeviceOrientationEvent) => {
-      if (!event.gamma || !event.beta) return
-
-      const rotateX = event.beta / 5
-      const rotateY = event.gamma / 5
-
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    }
-
     window.addEventListener("mousemove", handleMouseMove)
-    window.addEventListener("deviceorientation", handleDeviceOrientation)
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
-      window.removeEventListener("deviceorientation", handleDeviceOrientation)
     }
   }, [])
 
-  // Highlight Formatter
   const formatText = (text: string) => {
     return text
       .replace(
@@ -94,27 +84,32 @@ export default function Home() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center px-20">
-      <div className="grid grid-cols-2 gap-20 items-center w-full">
-        
+    <section
+      id="home"
+      className="min-h-screen flex items-center px-6 md:px-12 lg:px-20"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+
         {/* LEFT SIDE */}
         <div>
-            <p className="text-xl font-mono mb-20">
-  <span className="text-pink-400">&lt;!</span>
-  <span className="text-green-400">DOCTYPE</span>
-  <span className="text-white"> </span>
-  <span className="text-yellow-300">html</span>
-  <span className="text-pink-400">&gt;</span>
-</p>
-          <Badge className="mb-6 bg-purple-500/20 text-purple-300 border-purple-500 font-mono text-[20px]">
+
+          <p className="text-sm md:text-base font-mono mb-10">
+            <span className="text-pink-400">&lt;!</span>
+            <span className="text-green-400">DOCTYPE</span>
+            <span className="text-white"> </span>
+            <span className="text-yellow-300">html</span>
+            <span className="text-pink-400">&gt;</span>
+          </p>
+
+          <Badge className="mb-6 bg-purple-500/20 text-purple-300 border-purple-500 font-mono text-sm md:text-base">
             FULL-STACK WEB & APP DEVELOPER
           </Badge>
 
-          <h1 className="text-[70px] font-black leading-[1.05] tracking-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
             GUMAGAWA NG CAPSTONE PROJECTS.
           </h1>
 
-          <div className="mt-8 text-xl w-[750px] min-h-[70px]">
+          <div className="mt-6 text-base sm:text-lg md:text-xl min-h-[60px] max-w-full">
             <p
               className="text-cyan-400 inline"
               dangerouslySetInnerHTML={{
@@ -123,51 +118,50 @@ export default function Home() {
             />
             <span className="animate-pulse text-white ml-1">|</span>
           </div>
+
         </div>
 
-        {/* RIGHT SIDE - FLOATING CODE CARD */}
-        <div className="flex justify-end perspective-[1200px]">
+        {/* RIGHT SIDE */}
+        <div className="flex justify-center lg:justify-end perspective-[1200px]">
+
           <div
             ref={cardRef}
-            className="w-[420px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-6 transition-transform duration-200 ease-out"
+            className="w-full max-w-[380px] md:max-w-[420px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-6 transition-transform duration-200 ease-out"
             style={{ transformStyle: "preserve-3d" }}
           >
-            {/* Mac Dots */}
+
             <div className="flex gap-2 mb-4">
               <span className="w-3 h-3 bg-red-500 rounded-full"></span>
               <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
               <span className="w-3 h-3 bg-green-500 rounded-full"></span>
             </div>
 
-            {/* Code */}
-            <pre className="text-sm font-mono leading-6 text-gray-200">
+            <pre className="text-xs sm:text-sm font-mono leading-6 text-gray-200 overflow-x-auto">
               <span className="text-purple-400">const</span>{" "}
               <span className="text-cyan-400">dev</span> = {"{"}
               {"\n  "}
               <span className="text-green-400">name</span>:{" "}
-              <span className="text-yellow-300">
-                "James Gasang"
-              </span>
-              ,
+              <span className="text-yellow-300">"James Gasang"</span>,
               {"\n  "}
               <span className="text-green-400">role</span>:{" "}
-              <span className="text-yellow-300">
-                "Full-Stack"
-              </span>
-              ,
+              <span className="text-yellow-300">"Full-Stack"</span>,
               {"\n  "}
               <span className="text-green-400">passionate</span>:{" "}
               <span className="text-purple-300">true</span>,
               {"\n  "}
-              <span className="text-green-400">coffeeLover</span>:{" "}
+              <span className="text-green-400">MilkTeaLover</span>:{" "}
+              <span className="text-purple-300">true</span>,
+              {"\n  "}
+              <span className="text-green-400">IcedCoffeeLover</span>:{" "}
               <span className="text-purple-300">true</span>,
               {"\n  "}
               <span className="text-green-400">learning</span>:{" "}
-              <span className="text-yellow-300">"always"</span>
-              {"\n"}
-              {"};"}
+              <span className="text-yellow-300">"Depende"</span>
+              {"\n"}{"};"}
             </pre>
+
           </div>
+
         </div>
 
       </div>

@@ -6,7 +6,7 @@ const projects = [
     title: "Inventory Tracker",
     description:
       "Inventory Tracker is a simple web-based inventory management system built using HTML, CSS, and JavaScript. The system uses LocalStorage to save and manage product data directly in the browser, meaning no backend or database is required. As the user, you act as the administrator who can add, update, delete, and monitor product stock levels in real-time. The system includes a Light and Dark Theme toggle for better user experience and accessibility. It helps prevent stock shortages and overstocking while improving organization and inventory tracking efficiency through a clean and responsive interface.",
-    image: "src/assets/inventorymock.png",
+    image: "src/assets/inventorymock.jpg",
     tech: ["HTML", "CSS", "JAVASCRIPT"],
     github: "https://github.com/jims062702/Inventory-Tracker",
     live: "https://jims062702.github.io/Inventory-Tracker/",
@@ -15,7 +15,7 @@ const projects = [
     title: "Calculator",
     description:
       "Calculator is a web-based application built using HTML, CSS, and JavaScript that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. The system uses LocalStorage to automatically save the last calculated result or user preferences, ensuring data persistence even after refreshing the page. It features a Light and Dark Theme toggle, allowing users to switch between themes for better visual comfort and improved user experience. The application provides a clean, responsive, and modern interface for efficient and convenient calculations.",
-    image: "src/assets/600x600.png",
+    image: "src/assets/600x600.jpg",
     tech: ["HTML", "CSS", "JAVASCRIPT"],
     github: "https://github.com/jims062702/JamesGasangCalculator",
     live: "https://jims062702.github.io/JamesGasangCalculator/",
@@ -24,7 +24,7 @@ const projects = [
     title: "EBOTO-MO TCC",
     description:
       "The Voting System for Tagoloan Community College (TCC) is a secure and user-friendly web-based election platform designed to digitize and streamline the student voting process. The system allows students to securely log in, view candidates by category, and cast their votes in an organized and transparent environment. It eliminates manual ballot counting, reduces human error, and ensures faster and more accurate election results. The Voting System for Tagoloan Community College (TCC) is a secure and user-friendly web-based election platform designed to digitize and streamline the student voting process. The system allows students to securely log in, view candidates by category, and cast their votes in an organized and transparent environment. It eliminates manual ballot counting, reduces human error, and ensures faster and more accurate election results.",
-    image: "src/assets/vote.png",
+    image: "src/assets/vote.jpg",
     tech: ["REACT", "VITE", "TAILWIND CSS", "LARAVEL", "MYSQL"],
     github: "https://github.com/jims062702/v0-voting-system-with-gmail",
     live: "https://v0-tccvotingsystem.vercel.app/login",

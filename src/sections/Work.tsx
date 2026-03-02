@@ -25,16 +25,22 @@ export default function Work() {
 
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "Junior Developer",
       date: "Jul 2024 – Present",
       description:
         "Developed full-stack web systems including inventory, payroll and service management platforms.",
     },
     {
       title: "Freelance Developer",
-      date: "2022 – 2024",
+      date: "2025 – Present",
       description:
         "Built modern full-stack applications for startups and small businesses.",
+    },
+    {
+      title: "Mobile App Developer",
+      date: "Present",
+      description:
+        "Built modern full-stack mobile applications.",
     },
   ]
 

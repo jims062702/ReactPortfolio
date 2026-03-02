@@ -3,18 +3,31 @@ import { useState } from "react"
 
 const projects = [
   {
-    title: "RVDC Ref and Aircon Repair Shop",
+    title: "Inventory Tracker",
     description:
-      "Comprehensive business management system designed to streamline inventory tracking, sales processing, employee management, payroll processing, service scheduling, and more advanced system features for enterprise usage.",
-    image: "/project1.png",
-    tech: ["Docker", "Full Stack", "NextJS", "PostgreSQL", "Redis", "Stripe"],
+      "Inventory Tracker is a simple web-based inventory management system built using HTML, CSS, and JavaScript. The system uses LocalStorage to save and manage product data directly in the browser, meaning no backend or database is required. As the user, you act as the administrator who can add, update, delete, and monitor product stock levels in real-time. The system includes a Light and Dark Theme toggle for better user experience and accessibility. It helps prevent stock shortages and overstocking while improving organization and inventory tracking efficiency through a clean and responsive interface.",
+    image: "src/assets/inventorymock.png",
+    tech: ["HTML", "CSS", "JAVASCRIPT"],
+    github: "https://github.com/jims062702/Inventory-Tracker",
+    live: "https://jims062702.github.io/Inventory-Tracker/",
   },
   {
-    title: "Easethetics Landing Page",
+    title: "Calculator",
     description:
-      "Promotional website designed to showcase the features and benefits of the Easethetics Aesthetic Management System.",
-    image: "/project2.png",
-    tech: ["Typescript", "NextJS", "Tailwind", "GSAP"],
+      "Calculator is a web-based application built using HTML, CSS, and JavaScript that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. The system uses LocalStorage to automatically save the last calculated result or user preferences, ensuring data persistence even after refreshing the page. It features a Light and Dark Theme toggle, allowing users to switch between themes for better visual comfort and improved user experience. The application provides a clean, responsive, and modern interface for efficient and convenient calculations.",
+    image: "src/assets/600x600.png",
+    tech: ["HTML", "CSS", "JAVASCRIPT"],
+    github: "https://github.com/jims062702/JamesGasangCalculator",
+    live: "https://jims062702.github.io/JamesGasangCalculator/",
+  },
+  {
+    title: "EBOTO-MO TCC",
+    description:
+      "The Voting System for Tagoloan Community College (TCC) is a secure and user-friendly web-based election platform designed to digitize and streamline the student voting process. The system allows students to securely log in, view candidates by category, and cast their votes in an organized and transparent environment. It eliminates manual ballot counting, reduces human error, and ensures faster and more accurate election results. The Voting System for Tagoloan Community College (TCC) is a secure and user-friendly web-based election platform designed to digitize and streamline the student voting process. The system allows students to securely log in, view candidates by category, and cast their votes in an organized and transparent environment. It eliminates manual ballot counting, reduces human error, and ensures faster and more accurate election results.",
+    image: "src/assets/vote.png",
+    tech: ["REACT", "VITE", "TAILWIND CSS", "LARAVEL", "MYSQL"],
+    github: "https://github.com/jims062702/v0-voting-system-with-gmail",
+    live: "https://v0-tccvotingsystem.vercel.app/login",
   },
 ]
 
@@ -94,15 +107,30 @@ export default function Projects() {
                   </h3>
 
                   <div className="flex gap-3 shrink-0">
-                    <Github
-                      size={18}
-                      className="cursor-pointer hover:text-purple-400"
-                    />
-                    <ExternalLink
-                      size={18}
-                      className="cursor-pointer hover:text-purple-400"
-                    />
-                  </div>
+
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-purple-400 transition"
+    >
+      <Github size={18} />
+    </a>
+  )}
+
+  {project.live && (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-purple-400 transition"
+    >
+      <ExternalLink size={18} />
+    </a>
+  )}
+
+</div>
                 </div>
 
                 {/* Description */}

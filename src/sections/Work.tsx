@@ -42,13 +42,21 @@ export default function Work() {
     <section
       id="work"
       className="min-h-screen px-6 md:px-12 lg:px-20 py-20 text-white"
+      
     >
-
-      <p className="text-base md:text-lg font-mono text-purple-400">
-        {"<section id=\"work\">"}
+      {/* Code Style Heading */}
+      <p className="text-base md:text-lg font-mono">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-purple-400">section</span>{" "}
+        <span className="text-green-400">id</span>
+        <span className="text-white">=</span>
+        <span className="text-yellow-300">"work"</span>
+        <span className="text-pink-400">&gt;</span>
       </p>
 
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4">
+      
+
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
         Work
       </h2>
 
@@ -125,8 +133,12 @@ export default function Work() {
   </div>
 </div>
 
-      <p className="text-base md:text-lg font-mono text-purple-400 mt-20">
-        {"</section>"}
+      {/* Closing Tag */}
+      <p className="text-base md:text-lg font-mono mt-10">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-pink-400">/</span>
+        <span className="text-purple-400">section</span>
+        <span className="text-pink-400">&gt;</span>
       </p>
 
     </section>

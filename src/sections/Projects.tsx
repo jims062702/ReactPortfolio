@@ -31,12 +31,18 @@ export default function Projects() {
       className="min-h-screen px-6 md:px-12 lg:px-20 py-20 text-white"
     >
 
-      <p className="text-base md:text-lg font-mono text-purple-400">
-        {"<section id=\"projects\">"}
+      {/* Code Style Heading */}
+      <p className="text-base md:text-lg font-mono">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-purple-400">section</span>{" "}
+        <span className="text-green-400">id</span>
+        <span className="text-white">=</span>
+        <span className="text-yellow-300">"projects"</span>
+        <span className="text-pink-400">&gt;</span>
       </p>
 
       <div className="mt-4 mb-12">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           Projects
         </h2>
         <p className="text-gray-400 font-mono mt-2 text-sm md:text-base">
@@ -161,8 +167,12 @@ export default function Projects() {
         })}
       </div>
 
-      <p className="text-base md:text-lg font-mono text-purple-400 mt-20">
-        {"</section>"}
+      {/* Closing Tag */}
+      <p className="text-base md:text-lg font-mono mt-10">
+        <span className="text-pink-400">&lt;</span>
+        <span className="text-pink-400">/</span>
+        <span className="text-purple-400">section</span>
+        <span className="text-pink-400">&gt;</span>
       </p>
 
     </section>

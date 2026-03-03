@@ -84,7 +84,7 @@ export default function Contact() {
             <div>
               <p className="text-xs text-gray-400">EMAIL</p>
               <p className="text-gray-200 text-sm md:text-base break-all">
-                your@email.com
+                gasang143x@gmail.com
               </p>
             </div>
           </a>
@@ -104,20 +104,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-white/10 border border-white/20 rounded-xl px-4 md:px-6 py-4 hover:bg-purple-600/20 transition"
-          >
-            <Linkedin className="text-purple-400 shrink-0" />
-            <div>
-              <p className="text-xs text-gray-400">LINKEDIN</p>
-              <p className="text-gray-200 text-sm md:text-base break-all">
-                linkedin.com/in/yourprofile
-              </p>
-            </div>
-          </a>
+          
 
         </div>
 
